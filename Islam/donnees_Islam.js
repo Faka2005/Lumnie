@@ -1,134 +1,263 @@
-const Prophète = {
-  Prophète1: {
-    nom: "1",
-    naissance: "",
-    mort: "",
-    Pére: "",
-    Mére: "",
-    Enfant: "",
-  },
-  Prophète2: {
-    nom: "",
-    naissance: "",
-    mort: "",
-    Pére: "",
-    Mére: "",
-    Enfant: "",
-  },
+//! Class utilisé pour la partie islam 
+class ProphèteClass  {
+  constructor(nom_prophete,nom,naissance,mort,Pére,Mére,Enfant= [],physique = []) {
+    this.nom_prophete=nom_prophete;
+    this.nom=nom;
+    this.naissance=naissance;
+    this.mort=mort;
+    this.Pére=Pére;
+    this.Mére=Mére;
+    this.Enfant=Enfant;
+    this.physique=physique;
+  }
+  getNom(){
+    return this.nom;
+  };
+  
+  getNom_prophete(){
+    return this.nom_prophete;
+  };
+
+  getNaissances() {
+    return this.naissance;
+  };
+
+  getMort(){
+    return this.mort;
+  };
+
+  getPere(){
+    return  this.Pére;
+  };
+  
+  getMere(){
+    return this.Mére;
+  };
+
+  getEnfant(){
+    return this.Enfant;
+  };
+
+  getPhysique(){
+    return  this.physique;
+  };
+  
+  
+};
+  
+class Califes{
+  constructor(nom_califes,nom,naissance,mort,Pére,Mére,Enfant= [],physique = [],qualite =[]) {
+    this.nom_califes=nom_califes;
+    this.nom=nom;
+    this.naissance=naissance;
+    this.mort=mort;
+    this.Pére=Pére;
+    this.Mére=Mére;
+    this.Enfant=Enfant;
+    this.physique=physique;
+    this.calité=qualite;
+  }
+  getNom(){
+    return this.nom;
+  };
+  
+  getNom_Califes(){
+    return this.nom_califes;
+  };
+
+  getNaissances() {
+    return this.naissance;
+  };
+
+  getMort(){
+    return this.mort;
+  };
+
+  getPere(){
+    return  this.Pére;
+  };
+  
+  getMere(){
+    return this.Mére;
+  };
+
+  getEnfant(){
+    return this.Enfant;
+  };
+
+  getPhysique(){
+    return  this.physique;
+  };
+  
+  getQualite(){
+    return this.qualite;
+  }
 };
 
-const Califes = {
-  Califes1: {
-    nom: "",
-    naissance: "",
-    mort: "",
-    Pére: "",
-    Mére: "",
-    Enfant: "",
-    Lieu_de_naissance: "",
-    Lieu_de_mort: "",
-    qualite: "",
-  },
-  Califes2: {
-    nom: "",
-    naissance: "",
-    mort: "",
-    Pére: "",
-    Mére: "",
-    Enfant: "",
-    Lieu_de_naissance: "",
-    Lieu_de_mort: "",
-    qualite: "",
-  },
+class Anges{
+  constructor(nom, role, description =[]){
+    this.nom = nom ;
+    this.role= role ;
+    this.description= description ;
+  }
+
+  getNom(){
+    return this.nom
+  }  
+  
+  getRole(){
+    return  this.role ;
+  }
+
+  getDescription(){
+    return this.description ;
+  }
 };
-const Campagnon = {
-  Campagnon1: {
-    nom: "",
-    qualite: "",
-    surnom: "",
-  },
-  Campagnon2: {
-    nom: "",
-    qualite: "",
-    surnom: "",
-  },
+class Campagnon{
+  constructor(nom,qualite,surnom){
+    this.nom=nom;
+    this.qualite=qualite;
+    this.surnom=surnom;
+  }
+  getNom(){
+    return this.nom;
+  };
+
+  getQualite(){
+    this.qualite;
+  };
+  getSurnom() {
+    return this.surnom;
+  }
 };
-const Anges = {
-  Anges1: {
-    nom: "",
-    rôle: "",
-    description: "",
-  },
-  Anges2: {
-    nom: "",
-    rôle: "",
-    description: "",
-  },
+
+class Ennemi_Allah{
+  constructor(nom,description,causes) {
+    this.nom = nom;
+    this.description = description ;
+    this.causes = causes ;
+  }
+  getNom(){
+    return  this.nom ;
+  }
+  getDescription(){
+    return this.description;
+  }
+  getCauses(){
+    return this.causes;
+  }
 };
-const Ennemi_Allah = {
-  ennemisdallah1: {
-    nom: "",
-    description: "",
-    causes: "",
-  },
-  ennemisdallah2: {
-    nom: "",
-    description: "",
-    causes: "",
-  },
-};
-const Pilliers_Islam={
-  pillier1 :{
-    nom:"",
-    description:"",
-  }
-}
-const Pilliers_Iman={
-  pillierimaman1 :{
-    nom:"",
-    description:""
-  }
-}
-const Nom_Allah={
-  Nom_Allah1:
-  {
-    nom_arabe:"",
-    nom_français:"",
-    description:""
-  }
-}
-const juzz={
-  juzz1:{
-    numJuz:0,
-    debut:"",
-    fin:"",
-    ayat:""
-  }
-}
-const douans={
-  douans1:{
-    arabe:"",
-    description:""
-  }
-}
 
 class Sourates {
   constructor(nomSourate = []) {
     this.nomSourate = nomSourate;
   }
-}
+};
+
+class Juzz{
+  constructor (num_Juzz , nom_juzz , sourates =[],debut,fin){
+    this.num_Juzz= num_Juzz ;
+    this.nom_juzz = nom_juzz ;
+    this.sourates = new Sourates [sourates] ;
+    this.debut=debut;
+    this.fin=fin;
+  }
+  getNumero_Juzz(){
+    return this.num_Juzz;
+  }
+  getNom_Juzz(){
+    return this.nom_juzz;
+  }
+  getSourates() {
+    return this.sourates.nomSourate;
+  }
+  getDebut(){
+    return  this.debut;
+  }
+  getFin(){
+    return this.fin;
+  }
+};
 
 class Récitateur {
   constructor(nom, sourates = []) {
     this.nom = nom;
     this.sourates = new Sourates(sourates);
   }
-
+  getNom(){
+    return  this.nom;
+  }
   // Fonction pour récupérer chaque élément de la liste de sourates
   getSourates() {
     return this.sourates.nomSourate;
   }
+};
+
+class Pilliers_Ihsan{
+  constructor (nom,description,conditions=[]){
+    this.nom=nom;
+    this.description= description;
+    this.conditions=conditions;
+  }
+  getDescription(){
+    return  this.description;
+  }
+  getName(){
+    return this.nom ;
+  }
+  getConditions(){
+    return this.conditions;
+  
+  }
+};
+class Pilliers_Iman{
+  constructor (nom,description,conditions=[]){
+    this.nom=nom;
+    this.description= description;
+    this.conditions=conditions;
+  }
+  getDescription(){
+    return  this.description;
+  }
+  getName(){
+    return this.nom ;
+  }
+  getConditions(){
+    return this.conditions;
+  
+  }
+};
+class Pilliers_Islam{
+  constructor (nom,description,conditions=[]){
+    this.nom=nom;
+    this.description= description;
+    this.conditions=conditions;
+  }
+  getDescription(){
+    return  this.description;
+  }
+  getName(){
+    return this.nom ;
+  }
+  getConditions(){
+    return this.conditions;
+  
+  }
+};
+
+class Nom_Allah{
+  constructor(nom_arabe,nom_français,signification,explication){
+    this.nomAr = nom_arabe;
+    this.nomFr = nom_français;
+    this.signification = signification;
+    this.explication = explication
+  }
+  getNomAR() {return this.nomAr;}
+  getNomFR() {return this.nomFr;}
+  getSignif() {return this.signification;}
+  getExplication() {return this.explication;}
 }
+
 
 
 const recitateur1 = new Récitateur("Abdul Basit", ["Al-Fatiha", "Al-Baqarah", "Al-Imran"]);
@@ -139,8 +268,8 @@ function Affiche_Sourates(recitateur) {
   const sourates = recitateur.getSourates();
 
   // Affichage de chaque élément de la liste de sourates
-  sourates.forEach((sourate, index) => {
-    console.log(` ${sourate}`);
+  sourates.forEach((sourate,index) => {
+    console.log(` sourate :${sourate} , Index :${index}`);
   });
 }
 // Fonction qui donne le sourat choisi dans le récitateur choisi
@@ -158,4 +287,4 @@ function DonneSourate(numero, recitateur) {
 
 
 Affiche_Sourates(recitateur1);
-DonneSourate(0, recitateur1);
+DonneSourate(1, recitateur1);
