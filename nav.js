@@ -1,15 +1,16 @@
-function openLeftMenu() {
-    document.getElementById("leftMenu").style.display = "block";
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  let dropdowns = document.getElementsByClassName("dropdown");
+  for (let i = 0; i < dropdowns.length; i++) {
+      dropdowns[i].addEventListener("click", function() {
+          this.querySelector(".dropdown-content").classList.toggle("show");
+      });
   }
-  
-  function closeLeftMenu() {
-    document.getElementById("leftMenu").style.display = "none";
-  }
-  
-  function openRightMenu() {
-    document.getElementById("rightMenu").style.display = "block";
-  }
-  
-  function closeRightMenu() {
-    document.getElementById("rightMenu").style.display = "none";
-  }
+});
