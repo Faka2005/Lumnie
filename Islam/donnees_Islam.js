@@ -1,49 +1,5 @@
 //! Class utilisé pour la partie islam 
-class ProphèteClass  {
-  constructor(nom_prophete,nom,naissance,mort,Pére,Mére,Enfant= [],physique = []) {
-    this.nom_prophete=nom_prophete;
-    this.nom=nom;
-    this.naissance=naissance;
-    this.mort=mort;
-    this.Pére=Pére;
-    this.Mére=Mére;
-    this.Enfant=Enfant;
-    this.physique=physique;
-  }
-  getNom(){
-    return this.nom;
-  };
-  
-  getNom_prophete(){
-    return this.nom_prophete;
-  };
 
-  getNaissances() {
-    return this.naissance;
-  };
-
-  getMort(){
-    return this.mort;
-  };
-
-  getPere(){
-    return  this.Pére;
-  };
-  
-  getMere(){
-    return this.Mére;
-  };
-
-  getEnfant(){
-    return this.Enfant;
-  };
-
-  getPhysique(){
-    return  this.physique;
-  };
-  
-  
-};
   
 class Califes{
   constructor(nom_califes,nom,naissance,mort,Pére,Mére,Enfant= [],physique = [],qualite =[]) {
@@ -132,10 +88,11 @@ class Campagnon{
 };
 
 class Ennemi_Allah{
-  constructor(nom,description,causes) {
+  constructor(nom,description,causes=[],explication) {
     this.nom = nom;
     this.description = description ;
     this.causes = causes ;
+    this.explication = explication ;
   }
   getNom(){
     return  this.nom ;
@@ -145,6 +102,9 @@ class Ennemi_Allah{
   }
   getCauses(){
     return this.causes;
+  }
+  getExplication(){
+    return  this.explication;
   }
 };
 
@@ -194,10 +154,12 @@ class Récitateur {
 };
 
 class Pilliers_Ihsan{
-  constructor (nom,description,conditions=[]){
+  constructor (nom,description,conditions=[],annulatif=[],explication){
     this.nom=nom;
     this.description= description;
     this.conditions=conditions;
+    this.annulatif=annulatif;
+    this.explication= explication;
   }
   getDescription(){
     return  this.description;
@@ -207,14 +169,21 @@ class Pilliers_Ihsan{
   }
   getConditions(){
     return this.conditions;
-  
+  }
+  getAnnulatifs(){
+    return  this.annulatif;
+  }
+  getExplication(){
+    return  this.explication;
   }
 };
 class Pilliers_Iman{
-  constructor (nom,description,conditions=[]){
+  constructor (nom,description,conditions=[],annulatif=[],explication){
     this.nom=nom;
     this.description= description;
     this.conditions=conditions;
+    this.annulatif=annulatif;
+    this.explication= explication;
   }
   getDescription(){
     return  this.description;
@@ -224,14 +193,21 @@ class Pilliers_Iman{
   }
   getConditions(){
     return this.conditions;
-  
+  }
+  getAnnulatifs(){
+    return  this.annulatif;
+  }
+  getExplication(){
+    return  this.explication;
   }
 };
 class Pilliers_Islam{
-  constructor (nom,description,conditions=[]){
+  constructor (nom,description,conditions=[],annulatif=[],explication){
     this.nom=nom;
     this.description= description;
     this.conditions=conditions;
+    this.annulatif=annulatif;
+    this.explication= explication;
   }
   getDescription(){
     return  this.description;
@@ -241,7 +217,12 @@ class Pilliers_Islam{
   }
   getConditions(){
     return this.conditions;
-  
+  }
+  getAnnulatifs(){
+    return  this.annulatif;
+  }
+  getExplication(){
+    return  this.explication;
   }
 };
 
@@ -285,6 +266,3 @@ function DonneSourate(numero, recitateur) {
   }
 }
 
-
-Affiche_Sourates(recitateur1);
-DonneSourate(1, recitateur1);
