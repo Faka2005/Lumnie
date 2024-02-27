@@ -46,7 +46,30 @@ class ProphèteClass {
 //! Lister les noms  dans l'odre 
 const Prophètes = [
     new ProphèteClass("Adam"),
-   
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass(),
+    new ProphèteClass()
 
 ]
 
