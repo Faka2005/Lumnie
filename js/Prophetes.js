@@ -1,5 +1,4 @@
-class ProphèteClass {
-    constructor(nom, nom_Arabe, naissance, mort, Pére, Mére  , Enfant = [], Femme = [], physique = [],peuple,video)
+class ProphèteClass { constructor(nom, nom_Arabe, naissance, mort, Pére, Mére  , Enfant = [], Femme = [], physique = [],peuple,video)
     {
         this.nom = nom;
         this.nom_Arabe = nom_Arabe;
@@ -115,7 +114,7 @@ function Afficher_Prophètes() {
         let Peuple = document.createElement('p');
         Peuple.textContent = "Peuple : " + prophete.getPeuple();
         Carte.appendChild(Peuple); // Ajouter le peuple à la carte
-        
+
         let Iframe = document.createElement('iframe');
         Iframe.src = prophete.getVideo();
         Iframe.width = "300";
@@ -151,9 +150,7 @@ function Afficher_Prophètes() {
 }
 
 
-
-Afficher_Prophètes();
-
+    
 
 
 
@@ -161,14 +158,9 @@ Afficher_Prophètes();
 
 
 
-//! Lister les noms  dans l'odre 
 
-
-
- 
 //!Ce code ci-dessous est une version qui fonctionne suffit de rajouter le styles 
 
-/*
 
 function Affichage_Liste_Prophete() {
     const Liste_prophetes = document.querySelector('#liste_prophetes');
@@ -177,12 +169,12 @@ function Affichage_Liste_Prophete() {
 
         let li = document.createElement('li');
         li.className = "list-group-item";
-        const Nom = document.createTextNode(Prophètes[i].getNom_prophete()  +  "(" +Prophètes[i].getNom_Arabe() +")");
+        const Nom = document.createTextNode(Prophètes[i].getNom()  +  "(" +Prophètes[i].getNom_Arabe() +")");
         li.appendChild(Nom);
         Liste_prophetes.appendChild(li); // Utiliser appendChild pour ajouter l'élément à la liste
     };
 };
 Affichage_Liste_Prophete();
 
-*/
+
 
