@@ -1,0 +1,19 @@
+.colonnes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrer les cartes horizontalement */
+}
+
+.carte {
+    width: 45%; /* Ajustez la largeur des cartes en fonction de vos besoins */
+    margin-bottom: 20px; /* Espacement entre les cartes */
+    padding: 10px;
+    border: 1px solid #ccc; /* Bordure pour les cartes */
+    border-radius: 5px; /* Coins arrondis */
+    box-sizing: border-box; /* Pour inclure la bordure dans la largeur et la hauteur */
+    color: gold;
+    
+}
+body{
+    background-color: black;
+}
