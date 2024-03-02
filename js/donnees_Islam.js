@@ -51,10 +51,11 @@ class Califes{
 };
 
 class Anges{
-  constructor(nom, role, description =[]){
+  constructor(nom, role, description =[],explication){
     this.nom = nom ;
     this.role= role ;
     this.description= description ;
+    this.explication=explication;
   }
 
   getNom(){
@@ -67,6 +68,10 @@ class Anges{
 
   getDescription(){
     return this.description ;
+  }
+  
+  getExplication(){
+    return this.explication ;
   }
 };
 class Campagnon{
@@ -153,78 +158,7 @@ class Récitateur {
   }
 };
 
-class Pilliers_Ihsan{
-  constructor (nom,description,conditions=[],annulatif=[],explication){
-    this.nom=nom;
-    this.description= description;
-    this.conditions=conditions;
-    this.annulatif=annulatif;
-    this.explication= explication;
-  }
-  getDescription(){
-    return  this.description;
-  }
-  getName(){
-    return this.nom ;
-  }
-  getConditions(){
-    return this.conditions;
-  }
-  getAnnulatifs(){
-    return  this.annulatif;
-  }
-  getExplication(){
-    return  this.explication;
-  }
-};
-class Pilliers_Iman{
-  constructor (nom,description,conditions=[],annulatif=[],explication){
-    this.nom=nom;
-    this.description= description;
-    this.conditions=conditions;
-    this.annulatif=annulatif;
-    this.explication= explication;
-  }
-  getDescription(){
-    return  this.description;
-  }
-  getName(){
-    return this.nom ;
-  }
-  getConditions(){
-    return this.conditions;
-  }
-  getAnnulatifs(){
-    return  this.annulatif;
-  }
-  getExplication(){
-    return  this.explication;
-  }
-};
-class Pilliers_Islam{
-  constructor (nom,description,conditions=[],annulatif=[],explication){
-    this.nom=nom;
-    this.description= description;
-    this.conditions=conditions;
-    this.annulatif=annulatif;
-    this.explication= explication;
-  }
-  getDescription(){
-    return  this.description;
-  }
-  getName(){
-    return this.nom ;
-  }
-  getConditions(){
-    return this.conditions;
-  }
-  getAnnulatifs(){
-    return  this.annulatif;
-  }
-  getExplication(){
-    return  this.explication;
-  }
-};
+
 
 class Nom_Allah{
   constructor(nom_arabe,nom_français,signification,explication){

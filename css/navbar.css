@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#393e46;
+}
+
+header {
+    background-color: black; /* Couleur de fond de l'en-tête */
+    padding: 10px 0; /* Espacement intérieur de l'en-tête */
+}
+
+.navbar {
+    text-align: center; /* Centrer les éléments de la navbar */
+}
+
+.navbar ul {
+    list-style-type: none; /* Supprimer les puces des listes */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline-block; /* Afficher les éléments de la navbar en ligne */
+    margin-right: 20px; /* Espacement entre les éléments de la navbar */
+}
+
+.navbar ul li a {
+    text-decoration: none; /* Supprimer le soulignement des liens */
+    color: #fff; /* Couleur du texte des liens */
+    padding: 5px 10px; /* Espacement intérieur des liens */
+    border-radius: 5px; /* Coins arrondis des liens */
+    transition: background-color 0.3s; /* Transition en cas de survol */
+}
+
+.navbar ul li a:hover {
+    background-color: #10e7ce; /* Couleur de fond des liens au survol */
+}
+h4{
+    color: #ccc;
+}
+.logo {
+    display: flex; /* Utiliser le modèle flexbox pour aligner les éléments */
+    justify-content: space-between; /* Espacement égal entre les éléments */
+}
+
+#left {
+    order: 1; /* Positionner l'élément "left" en premier */
+    text-decoration: none; /* Supprimer le soulignement des liens */
+    color: #fff; /* Couleur du texte des liens */
+}
+#left,#right:hover{
+    color:#10e7ce;
+}
+#right {
+    color: #ccc;
+    order: 2; /* Positionner l'élément "right" en second */
+}

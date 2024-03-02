@@ -1,20 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/Prophetes.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/navbar.css">
     <title>Document</title>
-  </head>
-  <body>
-    <h1 style="color: white;">Description rapide des prophéte</h1>
-    
-        <ul id="liste_prophetes"></ul>
+    <style>
 
-    <!-- Ajoutez un élément avec l'ID 'infos' pour afficher les détails du prophète -->
-    <div id="infos"></div>
-    
-  </body>
-  <script src="js/donnees_Islam.js"></script>
-  <script src="js/Prophetes.js"></script>
+    </style>
+</head>
+<body>
+    <header id="header"></header>
+    <br>
+    <main>
+        <section id="1">
+            <video >
+                <source src="" type="video/mp4">
+                 Your browser does not support the video tag.
+            </video>
+        </section>
+        <section id="2">
+
+        </section>
+        <section id="3">
+
+        </section>
+        <section id="4">
+
+        </section>
+        <section id="5">
+
+        </section>        
+    </main>
+
+    <div class="navbar1">
+        <a href="#" onclick="goToSection(0)">Section 1</a>
+        <a href="#" onclick="goToSection(1)">Section 2</a>
+        <a href="#" onclick="goToSection(2)">Section 3</a>
+        <a href="#" onclick="goToSection(3)">Section 4</a>
+        <a href="#" onclick="goToSection(4)">Section 5</a>
+    </div>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        let currentIndex = 0;
+
+        function goToSection(index) {
+            sections.forEach(section => {
+                section.style.transform = `translateY(-${index * 100}vh)`;
+            });
+            currentIndex = index;
+        }
+
+        function nextSection() {
+            if (currentIndex < sections.length - 1) {
+                goToSection(currentIndex + 1);
+            }
+        }
+
+        function prevSection() {
+            if (currentIndex > 0) {
+                goToSection(currentIndex - 1);
+            }
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowDown') {
+                nextSection();
+            } else if (event.key === 'ArrowUp') {
+                prevSection();
+            }
+        });
+    </script>
+    <script src="js/navbar.js"></script>
+</body>
 </html>

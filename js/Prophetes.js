@@ -1,4 +1,4 @@
-class ProphèteClass { constructor(nom, nom_Arabe, naissance, mort, Pére, Mére  , Enfant = [], Femme = [], physique = [],peuple,video)
+class ProphèteClass { constructor(nom, nom_Arabe, naissance, mort, Pére, Mére  , Enfant = [], Femme = [], physique = [],peuple,video = [])
     {
         this.nom = nom;
         this.nom_Arabe = nom_Arabe;
@@ -60,11 +60,9 @@ class ProphèteClass { constructor(nom, nom_Arabe, naissance, mort, Pére, Mére
 }
 
 const Prophètes = [
-    new ProphèteClass("Adam", "عدم", "4000 av. J-C", "3070 av. J-C", "Adam", "Ève", [], [], [], "Hommes", "https://www.youtube.com/watch?v=8jluurK-E6U"),
-    new ProphèteClass("Noé", "نوح", "2850 av. J-C", "2750 av. J-C", "Lamech", "Betheleem", [], [], [], "Hommes", "video_noe.mp4"),
-    new ProphèteClass("Adam", "عدم", "4000 av. J-C", "3070 av. J-C", "Adam", "Ève", [], [], [], "Hommes", "video_adam.mp4"),
-    new ProphèteClass("Noé", "نوح", "2850 av. J-C", "2750 av. J-C", "Lamech", "Betheleem", [], [], [], "Hommes", "video_noe.mp4"),
-    new ProphèteClass("Adam", "عدم", "4000 av. J-C", "3070 av. J-C", "Adam", "Ève", [], [], [], "Hommes", "video_adam.mp4"),
+    new ProphèteClass("Adam", "عدم", "4000 av. J-C", "3070 av. J-C", "Adam", "Ève", [], [], [], "Hommes", []),
+    new ProphèteClass("Noé", "نوح", "2850 av. J-C", "2750 av. J-C", "Lamech", "Betheleem", [], [], [], "Hommes", []),
+
     // Ajoutez d'autres prophètes avec des données réelles au besoin
 ];
 
@@ -75,6 +73,7 @@ function Afficher_Prophètes() {
     // Créer une div pour contenir les colonnes
     let colonnesDiv = document.createElement('div');
     colonnesDiv.classList.add('colonnes');
+    
 
     for (let prophete of Prophètes) {
         let Carte = document.createElement('div');
@@ -103,28 +102,50 @@ function Afficher_Prophètes() {
         let Enfants = document.createElement('p');
         Enfants.textContent = "Enfants : " + prophete.getEnfant().join(', ');
         Carte.appendChild(Enfants); // Ajouter les enfants à la carte
+        
 
         let Physique = document.createElement('p');
         Physique.textContent = "Caractéristiques physiques : " + prophete.getPhysique().join(', ');
         Carte.appendChild(Physique); // Ajouter les caractéristiques physiques à la carte
 
-        let Video = document.createElement('div');
-        Video.classList.add('video');
+        
 
         let Peuple = document.createElement('p');
         Peuple.textContent = "Peuple : " + prophete.getPeuple();
         Carte.appendChild(Peuple); // Ajouter le peuple à la carte
 
-        let Iframe = document.createElement('iframe');
-        Iframe.src = prophete.getVideo();
-        Iframe.width = "300";
-        Iframe.height = "150";
-        Iframe.frameBorder = "0";
-        Video.appendChild(Iframe);
-
-        Carte.appendChild(Video); // Ajouter la vidéo à la carte
-
         
+
+        let Video = document.createElement('div');
+        Video.classList.add('video');
+
+        if (prophete.getVideo().length > 0) {
+            for (let video of prophete.getVideo()) {
+                let Iframe = document.createElement('iframe');
+                Iframe.src = video;
+                Iframe.width = "300";
+                Iframe.height = "150";
+                Iframe.frameBorder = "0";
+                Video.appendChild(Iframe);
+            }
+        }if (prophete.getVideo().length == 0){
+
+            let div_erreur =document.createElement("div");
+            div_erreur.classList.add("alert_video");
+            let img_erreur=document.createElement("img");
+            img_erreur.setAttribute("src","Icons/alert_alarm_22185.ico");
+            img_erreur.style.width="25px";
+            img_erreur.style.display="inline-block";
+            let message_erreur=document.createElement("p");
+            message_erreur.innerHTML='Ce prophète n\'a pas de vidéo associée';
+            
+            div_erreur.append(img_erreur);
+            div_erreur.append(message_erreur);
+            Video.appendChild(div_erreur);
+
+        }
+
+        Carte.appendChild(Video); 
 
         // Ajouter la carte à la colonne actuelle
         colonnesDiv.appendChild(Carte);
@@ -149,9 +170,41 @@ function Afficher_Prophètes() {
     }
 }
 
-
+function Prophete_Choisie(Nom_Prophete_Selectionné) {
+    const Affichage = document.getElementById("infos");
+    if(Nom_Prophete_Selectionné !=="Tous"){
+        
+        Affichage.innerHTML = ''; // Supprimer le contenu précédent
     
+        for (let prophete of Prophètes) {
+            if (prophete.getNom() == Nom_Prophete_Selectionné) {
+                let index = 0; // Initialiser l'index en dehors de la boucle
+    
+    
+                    let Carte = document.createElement('div');
+                    Carte.classList.add('carte');
+    
+                    let Nom = document.createElement('h2');
+                    Nom.textContent = "Nom du prophète : " + prophete.getNom() + " (" + prophete.getNom_Arabe() + ")" + " " + "n°" + index;
+                    Carte.appendChild(Nom); // Ajouter le nom à la carte
+    
+                    // Ajouter d'autres détails du prophète ici...
+    
+                    // Ajouter la carte à l'affichage
+                    Affichage.appendChild(Carte);
+    
+                    // Incrémenter l'index
+                  
+                
+                return; // Sortir de la fonction après avoir affiché les détails du prophète choisi
+            }
+        } 
+    }else{
+        Affichage.innerHTML= "";
+        Afficher_Prophètes();
+    }
 
+}
 
 
 
@@ -163,18 +216,24 @@ function Afficher_Prophètes() {
 
 
 function Affichage_Liste_Prophete() {
-    const Liste_prophetes = document.querySelector('#liste_prophetes');
-    Liste_prophetes.innerHTML = '';
+    const Liste_prophetes = document.querySelector('#ul_seconde');
+    
     for (let i = 0; i < Prophètes.length; i++) {
 
         let li = document.createElement('li');
-        li.className = "list-group-item";
+        li.className = "li_seconde";
+        let button=document.createElement('button') ;
+        
+        button.type="button";
+        button.className ="btn btn-primary";
+        button.setAttribute('onclick', `Prophete_Choisie('${Prophètes[i].getNom()}')`);
         const Nom = document.createTextNode(Prophètes[i].getNom()  +  "(" +Prophètes[i].getNom_Arabe() +")");
-        li.appendChild(Nom);
+        button.appendChild(Nom);
+        li.appendChild(button);
         Liste_prophetes.appendChild(li); // Utiliser appendChild pour ajouter l'élément à la liste
     };
 };
+Afficher_Prophètes();
 Affichage_Liste_Prophete();
-
 
 

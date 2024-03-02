@@ -1,0 +1,25 @@
+.container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider {
+    width: 100%;
+    overflow-x: auto; /* Activation du défilement horizontal */
+    white-space: nowrap; /* Empêche le retour à la ligne des éléments */
+}
+
+.ul_seconde {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: inline-block; /* Affiche la liste en ligne */
+}
+
+.li_seconde {
+    display: inline-block; /* Affiche les éléments de liste en ligne */
+    padding: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 5px;
+}
