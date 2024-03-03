@@ -215,11 +215,11 @@ function Prophete_Choisie(Nom_Prophete_Selectionné) {
 //!Ce code ci-dessous est une version qui fonctionne suffit de rajouter le styles 
 
 
-function Affichage_Liste_Prophete() {
+function Affichage_Liste(Liste) {
     const Liste_prophetes = document.querySelector('#ul_seconde');
     
-    for (let i = 0; i < Prophètes.length; i++) {
-
+    for (let i = 0; i < Liste.length; i++) {
+  
         let li = document.createElement('li');
         li.className = "li_seconde";
         let button=document.createElement('button') ;
@@ -232,8 +232,8 @@ function Affichage_Liste_Prophete() {
         li.appendChild(button);
         Liste_prophetes.appendChild(li); // Utiliser appendChild pour ajouter l'élément à la liste
     };
-};
+  };
 Afficher_Prophètes();
-Affichage_Liste_Prophete();
+Affichage_Liste(Prophètes);
 
 

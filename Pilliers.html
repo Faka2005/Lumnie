@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/Pilliers.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/Pilliers.css" />
+    <link rel="stylesheet" href="css/sidebar_seconde.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 </head>
+
 <body>
     <header id="header">
         <nav class="navbar">
@@ -14,16 +17,32 @@
                 <a href="index.html" id="left">Retour à l'Acceuil</a>
                 <h3 id="right"></h3>
             </div>
-            <br>
-            <ul id="nav-links">
-
-            </ul>
+            <br />
+            <ul id="nav-links"></ul>
         </nav>
     </header>
-    <br>
-<div id="affichage"></div>
-  
+    <br />
+    <div class="container" >
+        <div class="slider">
+            <li class="li_seconde">
+                <button onclick="Affichage_Button('ul_seconde_islam')">
+                    Afficher la liste des Piliers de L'islam
+                </button>
+            </li>
+            <br />
+            <ul class="ul_seconde" id="ul_seconde_islam">
+                <li class="li_seconde">
+                    <button onclick="Affichage_Pillier_Islam_Choisie('Tous')">
+                        Tous les pilliers de L'Islam
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br />
+    <div id="affichage"></div>
 </body>
 <script src="js/Pilliers.js"></script>
 <script src="js/navbar.js"></script>
+
 </html>
