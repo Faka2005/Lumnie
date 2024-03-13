@@ -113,11 +113,7 @@ class Ennemi_Allah{
   }
 };
 
-class Sourates {
-  constructor(nomSourate = []) {
-    this.nomSourate = nomSourate;
-  }
-};
+
 
 class Juzz{
   constructor (num_Juzz , nom_juzz , sourates =[],debut,fin){
@@ -143,7 +139,11 @@ class Juzz{
     return this.fin;
   }
 };
-
+class Sourates {
+  constructor(nomSourate = []) {
+    this.nomSourate = nomSourate;
+  }
+};
 class Récitateur {
   constructor(nom, sourates = []) {
     this.nom = nom;
@@ -152,30 +152,12 @@ class Récitateur {
   getNom(){
     return  this.nom;
   }
-  // Fonction pour récupérer chaque élément de la liste de sourates
+  
   getSourates() {
     return this.sourates.nomSourate;
   }
 };
 
-
-
-class Nom_Allah{
-  constructor(nom_arabe,nom_français,signification,explication){
-    this.nomAr = nom_arabe;
-    this.nomFr = nom_français;
-    this.signification = signification;
-    this.explication = explication
-  }
-  getNomAR() {return this.nomAr;}
-  getNomFR() {return this.nomFr;}
-  getSignif() {return this.signification;}
-  getExplication() {return this.explication;}
-}
-
-
-
-const recitateur1 = new Récitateur("Abdul Basit", ["Al-Fatiha", "Al-Baqarah", "Al-Imran"]);
 
 // Fonction pour récupérer et afficher les sourates d'un récitateur
 function Affiche_Sourates(recitateur) {
@@ -199,4 +181,22 @@ function DonneSourate(numero, recitateur) {
     console.log(`Le numéro de la sourate n'est pas valide.`);
   }
 }
+
+class Nom_Allah{
+  constructor(nom_arabe,nom_français,signification,explication){
+    this.nomAr = nom_arabe;
+    this.nomFr = nom_français;
+    this.signification = signification;
+    this.explication = explication
+  }
+  getNomAR() {return this.nomAr;}
+  getNomFR() {return this.nomFr;}
+  getSignif() {return this.signification;}
+  getExplication() {return this.explication;}
+}
+
+
+
+const recitateur1 = new Récitateur("Abdul Basit", ["Al-Fatiha", "Al-Baqarah", "Al-Imran"]);
+
 
